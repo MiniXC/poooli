@@ -1,0 +1,7 @@
+__pycache__
+.pdm.toml
+.python-version
+.vscode
+.venv
+.env
+*.lock
