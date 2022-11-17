@@ -1,13 +1,12 @@
 [project]
 name = "poooli"
-version = "0.1.0"
+version = "0.1.1"
 description = "A python library for printing on the Poooli thermal printer."
 authors = [
     {name = "Christoph Minixhofer", email = "christoph.minixhofer@gmail.com"},
 ]
 dependencies = [
     "Pillow>=9.3.0",
-    "pybluez>=0.23",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
