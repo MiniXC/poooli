@@ -1,6 +1,6 @@
 [project]
 name = "poooli"
-version = "0.1.1"
+version = "0.1.2"
 description = "A python library for printing on the Poooli thermal printer."
 authors = [
     {name = "Christoph Minixhofer", email = "christoph.minixhofer@gmail.com"},

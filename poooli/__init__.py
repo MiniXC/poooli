@@ -31,8 +31,8 @@ class Poooli():
             image = image.rotate(90, expand=True)
         image = image.resize(
             size=(
-                Poooli.WIDTH, 
-                int(image.height * Poooli.WIDTH / image.width)
+                int(image.height * Poooli.WIDTH / image.width),
+                Poooli.WIDTH,
             )
         )
         if mode == "bnw_dither":
