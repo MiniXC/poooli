@@ -2,6 +2,7 @@ from PIL import Image, ImageOps, ImageEnhance
 import ctypes
 import binascii
 import os
+import io
 
 LZO = ctypes.cdll.LoadLibrary(os.getenv('MINILZO_PATH'))
 
@@ -45,6 +46,13 @@ class Poooli():
 
     def send_image(self, file, mode="bnw_dither", contrast=1.0, brightness=1.0):
         image = self.process_image(file, mode, contrast, brightness)
+        self._send_image(image)
+
+    def send_image_bytes(self, image_bytes):
+        image = Image.open(io.BytesIO(image_bytes))
+        self._send_image(image)
+
+    def _send_image(self, image):
         work_memory = ctypes.create_string_buffer(16384 * 8)
         width_bytes = Poooli.WIDTH // 8
         for iy in range(image.height):
