@@ -27,12 +27,12 @@ class Poooli():
             image = ImageEnhance.Brightness(image).enhance(brightness)
         if contrast != 1.0:
             image = ImageEnhance.Contrast(image).enhance(contrast)
-        if image.width <= image.height:
+        if image.width > image.height:
             image = image.rotate(90, expand=True)
         image = image.resize(
             size=(
-                int(image.height * Poooli.WIDTH / image.width),
-                Poooli.WIDTH,
+                Poooli.WIDTH, 
+                int(image.height * Poooli.WIDTH / image.width)
             )
         )
         if mode == "bnw_dither":
